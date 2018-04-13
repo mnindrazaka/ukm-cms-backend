@@ -11,15 +11,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <!-- Icons-->
     <link href="{{ asset('vendors/coreui/vendors/css/flag-icon.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/coreui/vendors/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/coreui/vendors/css/simple-line-icons.css') }}" rel="stylesheet">
     <!-- Main styles for this application-->
     <link href="{{ asset('vendors/coreui/css/style.css') }}" rel="stylesheet">
+    <title>@yield('title')</title>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
@@ -27,8 +25,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="{{ asset('vendors/coreui/img/brand/logo.svg') }}" width="89" height="25" alt="CoreUI Logo">
-        <img class="navbar-brand-minimized" src="{{ asset('vendors/coreui/img/brand/sygnet.svg') }}" width="30" height="30" alt="CoreUI Logo">
+        ADMIN&nbsp;<b>BEM</b>
     </a>
 
     <button class="navbar-toggler sidebar-toggler d-md-down-none invisible" type="button" data-toggle="sidebar-lg-show">

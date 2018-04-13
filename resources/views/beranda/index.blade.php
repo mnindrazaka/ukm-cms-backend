@@ -1,5 +1,7 @@
 @extends('template')
 
+@section('title', 'Beranda')
+
 @section('content')
     <div class="animated fadeIn">
         <div class="row">
