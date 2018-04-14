@@ -16,5 +16,6 @@ Route::get('/', 'BerandaController@index');
 
 Route::resource('ukm', 'UkmController');
 
+Route::resource('admin', 'AdminController');
 
 
