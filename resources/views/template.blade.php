@@ -112,11 +112,21 @@
     <main class="main">
         <!-- Breadcrumb-->
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
             <li class="breadcrumb-item">
-                <a href="#">Admin</a>
+                <a href="{{ url('/') }}">beranda</a>
             </li>
-            <li class="breadcrumb-item active">Dashboard</li>
+
+            @php $segments = ''; @endphp
+            @foreach(Request::segments() as $key => $segment)
+                @php $segments .= '/' . $segment; @endphp
+                <li class="breadcrumb-item">
+                    @if($key + 1 < count(Request::segments()))
+                        <a href="{{ url($segments) }}">{{ $segment }}</a>
+                    @else
+                        <span>{{ $segment }}</span>
+                    @endif
+                </li>
+            @endforeach
         </ol>
         <div class="container-fluid">
             <h3 class="mb-3">@yield('title')</h3>
