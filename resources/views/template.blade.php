@@ -97,6 +97,12 @@
                         <i class="nav-icon icon-organization"></i> Data UKM
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/admin') }}">
+                        <i class="nav-icon icon-user"></i> Data Admin
+                    </a>
+                </li>
             </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

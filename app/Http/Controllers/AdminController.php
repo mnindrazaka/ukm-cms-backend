@@ -40,9 +40,11 @@ class AdminController extends Controller
          $this->validate($request, [
             'username' => 'required|string|min:5|unique:admin',
             'password' => 'required|confirmed|string|min:5',
-            
         ]);
   
+        $request->merge([
+            'password' => bcrypt($request->input('password'))
+        ]);
 
         Admin::create($request->all());
         return redirect('/admin');
