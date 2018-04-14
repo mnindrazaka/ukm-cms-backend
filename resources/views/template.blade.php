@@ -17,6 +17,8 @@
     <link href="{{ asset('vendors/coreui/vendors/css/simple-line-icons.css') }}" rel="stylesheet">
     <!-- Main styles for this application-->
     <link href="{{ asset('vendors/coreui/css/style.css') }}" rel="stylesheet">
+    {{-- Datatables --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/datatables/css/datatables.min.css') }}"/>
     <title>@yield('title')</title>
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -139,9 +141,13 @@
 <script src="{{ asset('vendors/coreui/vendors/js/pace.min.js') }}"></script>
 <script src="{{ asset('vendors/coreui/vendors/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('vendors/coreui/vendors/js/coreui.min.js') }}"></script>
+{{-- Datatables --}}
+<script type="text/javascript" src="{{ asset('vendors/datatables/js/datatables.min.js') }}"></script>
 <!-- Plugins and scripts required by this view-->
 <script src="{{ asset('vendors/coreui/vendors/js/Chart.min.js') }}"></script>
 <script src="{{ asset('vendors/coreui/vendors/js/custom-tooltips.min.js') }}"></script>
 <script src="{{ asset('vendors/coreui/js/main.js') }}"></script>
+{{-- My Custom JS --}}
+<script src="{{ asset('js/custom.js') }}"></script>
 </body>
 </html>

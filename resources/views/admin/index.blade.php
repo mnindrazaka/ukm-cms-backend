@@ -11,12 +11,12 @@
       <div class="card-body">
           <a class="btn btn-primary mb-3" href="{{ url('admin/create')  }}">Tambah Admin</a>
 
-          <table class="table table-striped table-hover">
+          <table class="table table-striped table-hover" id="myTable">
               <thead>
               <tr>
                   <th>No</th>
                   <th>Username</th>
-                  <th colspan="2">Aksi</th>
+                  <th>Aksi</th>
               </tr>
               </thead>
               <tbody>
