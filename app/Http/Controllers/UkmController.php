@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ukm;
+
 
 class UkmController extends Controller
 {
@@ -13,7 +15,8 @@ class UkmController extends Controller
      */
     public function index()
     {
-        return view('ukm.index');
+        $data['ukm'] = Ukm::all();
+        return view('ukm.index', $data);
     }
 
     /**
@@ -23,6 +26,7 @@ class UkmController extends Controller
      */
     public function create()
     {
+
         return view('ukm.create');
     }
 
@@ -34,7 +38,18 @@ class UkmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $this->validate($request, [
+            'nama' => 'required|string|min:5',
+            'singkatan' => 'required|string',
+        ]);
+
+        $request->merge(['id_ukm'=>uniqid("ukm_")]);
+
+
+        Ukm::create($request->all());
+        return redirect('/ukm');
     }
 
     /**
@@ -45,7 +60,8 @@ class UkmController extends Controller
      */
     public function show($id)
     {
-        return view('ukm.show');
+         $data['ukm'] = Ukm::find($id);
+        return view('ukm.show',$data);
     }
 
     /**
@@ -56,7 +72,8 @@ class UkmController extends Controller
      */
     public function edit($id)
     {
-        return view('ukm.edit');
+        $data['ukm'] = Ukm::find($id);
+        return view('ukm.edit', $data);
     }
 
     /**
@@ -68,7 +85,14 @@ class UkmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $this->validate($request, [
+            'nama' => 'required|string|min:5',
+            'singkatan' => 'required|string',
+        ]);
+
+        Ukm::find($id)->update($request->all());
+        return redirect('/ukm');
+    }
     }
 
     /**
@@ -80,5 +104,8 @@ class UkmController extends Controller
     public function destroy($id)
     {
         //
+
+        Ukm::destroy($id);
+        return redirect('/ukm');
     }
 }
