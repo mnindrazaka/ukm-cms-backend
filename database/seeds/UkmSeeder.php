@@ -18,8 +18,8 @@ class UkmSeeder extends Seeder
                 'id_ukm' => uniqid('ukm_'),
                 'nama' => $faker->company,
                 'singkatan' => $faker->firstName,
-                'visi_misi' => $faker->sentence,
-                'detail' => $faker->sentence,
+                'visi_misi' => $faker->realText(),
+                'detail' => $faker->realText(),
                 'email' => $faker->email,
                 'telepon' => $faker->e164PhoneNumber,
                 'logo' => $faker->fileExtension

@@ -38,15 +38,11 @@ class UkmController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $this->validate($request, [
             'nama' => 'required|string|min:5',
             'singkatan' => 'required|string',
         ]);
-
         $request->merge(['id_ukm'=>uniqid("ukm_")]);
-
 
         Ukm::create($request->all());
         return redirect('/ukm');
@@ -60,7 +56,7 @@ class UkmController extends Controller
      */
     public function show($id)
     {
-         $data['ukm'] = Ukm::find($id);
+        $data['ukm'] = Ukm::find($id);
         return view('ukm.show',$data);
     }
 
