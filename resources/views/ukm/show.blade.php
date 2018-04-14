@@ -2,7 +2,7 @@
 
 @extends('template')
 
-@section('title', 'UKM')
+@section('title', 'Detail UKM')
 
 @section('content')
     <div class="row">

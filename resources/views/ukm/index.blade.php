@@ -2,7 +2,7 @@
 
 @extends('template')
 
-@section('title', 'UKM')
+@section('title', 'Halaman UKM')
 
 @section('content')
     {{-- Content of page --}}
