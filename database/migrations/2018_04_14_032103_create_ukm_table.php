@@ -15,13 +15,13 @@ class CreateUkmTable extends Migration
     {
         Schema::create('ukm', function (Blueprint $table) {
             $table->string('id_ukm', 20)->primary();
-            $table->string('nama', 20);
+            $table->string('nama', 50);
             $table->string('singkatan', 10);
             $table->longText('visi_misi')->nullable();
             $table->longText('detail')->nullable();
             $table->string('email', 30)->nullable();
             $table->string('telepon', 15)->nullable();
-            $table->string('logo', 50);
+            $table->string('logo', 50)->nullable();
             $table->timestamps();
         });
     }

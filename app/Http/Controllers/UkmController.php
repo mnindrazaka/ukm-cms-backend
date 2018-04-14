@@ -93,7 +93,6 @@ class UkmController extends Controller
         Ukm::find($id)->update($request->all());
         return redirect('/ukm');
     }
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -103,8 +102,6 @@ class UkmController extends Controller
      */
     public function destroy($id)
     {
-        //
-
         Ukm::destroy($id);
         return redirect('/ukm');
     }
