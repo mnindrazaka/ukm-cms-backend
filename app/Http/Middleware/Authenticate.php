@@ -5,21 +5,20 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class Authenticate
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        // jika sudah login maka redirect ke beranda
-        if (Auth::guard()->check()) {
-            return redirect('/');
+        // jika belum login maka redirect ke /login
+        if (!Auth::guard()->check()) {
+            return redirect('/login');
         }
 
         return $next($request);
