@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Admin;
 
 class BerandaController extends Controller
 {
@@ -13,6 +14,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
+        $data['Admin'] = Admin::all();
         return view('beranda.index');
     }
 

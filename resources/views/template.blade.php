@@ -37,7 +37,7 @@
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="font-weight-bold">M. Nindra Zaka</span>
+                <span class="font-weight-bold">{{{ Auth::user()->username}}}</span>
                 <img class="img-avatar" src="{{ asset('vendors/coreui/img/avatars/6.jpg') }}" alt="admin@bootstrapmaster.com">
             </a>
             <div class="dropdown-menu dropdown-menu-right">
