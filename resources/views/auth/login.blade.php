@@ -32,25 +32,27 @@
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="icon-user"></i>
-                    </span>
+                                    <span class="input-group-text">
+                                      <i class="icon-user"></i>
+                                    </span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Username" name="username">
-                                @if($errors->has('username'))
-                                    <p>
-                                        <small id="helpId" class="text-danger">{{ $errors->first('username') }}</small>
-                                    </p>
-                                @endif
+
                             </div>
                             <div class="input-group mb-4">
                                 <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="icon-lock"></i>
-                    </span>
+                                    <span class="input-group-text">
+                                      <i class="icon-lock"></i>
+                                    </span>
                                 </div>
                                 <input type="password" class="form-control" placeholder="Password" name="password">
                             </div>
+                              @if($errors->has('username'))
+                                    <p>
+                                   
+                                        <small id="helpId" class="text-danger">{{ $errors->first('username') }}</small>
+                                    </p>
+                                @endif
                             <div class="row">
                                 <div class="col-6">
                                     <button type="submit" class="btn btn-primary px-4">Login</button>

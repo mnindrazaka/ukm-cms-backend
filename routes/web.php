@@ -11,12 +11,26 @@
 |
 */
 
+Route::group(['middleware' => 'auth'], function ()
+{
+    Route::get('/', 'BerandaController@index');
+    Route::resource('ukm', 'UkmController');
+    Route::resource('admin', 'AdminController');
+    Route::get('/logout', 'LoginController@logout');
 
-Route::get('/', 'BerandaController@index')->middleware('auth');
+});
 
-Route::resource('ukm', 'UkmController')->middleware('auth');
-Route::resource('admin', 'AdminController')->middleware('auth');
 
-Route::get('/login', 'LoginController@showLoginForm')->middleware('guest');
-Route::post('/login', 'LoginController@login')->middleware('guest');
-Route::get('/logout', 'LoginController@logout')->middleware('auth');
+Route::group(['middleware' => 'guest'], function ()
+{
+    Route::get('/login', 'LoginController@showLoginForm');
+    Route::post('/login', 'LoginController@login');
+
+
+});
+
+
+
+
+
+
