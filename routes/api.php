@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/ukm/{id}', 'Api\UkmController@show');
+Route::put('/ukm/{id}', 'Api\UkmController@update');
+
+Route::resource('user', 'Api\UserController');
+Route::resource('artikel', 'Api\ArtikelController');
+Route::resource('banner', 'Api\BannerController');
+Route::resource('galeri', 'Api\GaleriController');
+
+
+
